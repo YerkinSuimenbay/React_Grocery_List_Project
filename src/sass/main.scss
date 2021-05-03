@@ -1,0 +1,128 @@
+@import "configs";
+$color: rgb(16, 133, 78);
+body {
+    background-color: $clr-primary-10;
+    color: $clr-grey-3;
+}
+
+main {
+    padding: 2rem;
+    width: 50vw;
+    margin: 10rem auto;
+    max-width: 1170px;
+    background-color: white;
+    box-shadow: $light-shadow;
+    border-radius: $radius;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+
+    button,
+    input {
+        font-size: 1rem;
+        padding: 0.375rem 0.75rem;
+    }
+
+    input {
+        flex: 1;
+        border: none;
+        background-color: $clr-grey-9;
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+
+        &.editing {
+            color: orangered;
+            border: 2px solid orangered;
+        }
+    }
+
+    button {
+        background-color: $clr-primary-7;
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+        width: 74px;
+    }
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: $clr-primary-10;
+
+    .item {
+        flex: 1;
+        margin-bottom: 0;
+        padding-left: 0.5rem;
+        text-transform: capitalize;
+    }
+
+    button {
+        padding: 0.5rem;
+        color: green;
+        width: 2rem;
+        &:hover {
+            background-color: green;
+            color: white;
+        }
+
+        &.delete-btn {
+            color: red;
+            &:hover {
+                color: white;
+                background-color: red;
+            }
+
+        }
+    }
+}
+
+.clear-btn {
+    text-transform: capitalize;
+    display: block;
+    margin: 0 auto;
+    padding: 0.375rem 0.75rem;
+    border-radius: $radius;
+    color: rgb(182, 40, 40);
+    background-color: rgb(224, 223, 223);
+    &:hover {
+        background-color: rgb(182, 40, 40);
+        color: rgb(247, 247, 247);
+    }
+}
+
+.status {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    letter-spacing: $spacing;
+    width: 50vw;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        width: 80vw;
+    }
+
+    form input {
+        width: 100px;
+    }
+
+}
